@@ -6,7 +6,7 @@ describe "User edits an existing company" do
     visit edit_company_path(company)
 
     fill_in "company[name]", with: "EA Sports"
-    click_button "Update"
+    click_button "Submit"
 
     expect(current_path).to eq("/companies/#{Company.last.id}/jobs")
     expect(page).to have_content("EA Sports")

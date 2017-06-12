@@ -1,5 +1,8 @@
-All Jobs for <strong><%= @company.name %></strong>
+<ul class="collection with-header">
 
-<% @jobs.each do |job| %>
-  <ul><%= job.title %> at <%= job.company.name %></ul>
-<% end %>
+  <li class="collection-header"><h3>All Jobs for <strong><%= @company.name %></strong></h3></li>
+
+  <% @jobs.each do |job| %>
+    <ul class="collection-item"><%= job.title %> at <%= job.company.name %></ul>
+  <% end %>
+</ul>
