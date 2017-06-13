@@ -13,6 +13,7 @@ describe 'User deletes an existing job' do
       click_link 'delete'
     end
 
-    expect(page).to have_content('DevOps at Test was successfully deleted')
+    
+    page.should have_content('DevOps at Test was successfully deleted')
   end
 end
