@@ -3,6 +3,7 @@ class JobsController < ApplicationController
   def index
     @company = Company.find(params[:company_id])
     @jobs = @company.jobs
+    @contacts = @company.contacts
   end
 
   def new
@@ -55,14 +56,6 @@ class JobsController < ApplicationController
   end
 
   private
-
-  def set_company
-     @company = Company.find(params[:company_id])
-  end
-
-   def set_job
-     @job = Job.find(params[:id])
-   end
 
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)

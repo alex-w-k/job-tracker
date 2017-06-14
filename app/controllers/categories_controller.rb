@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
       flash[:success] = "#{@category.title} updated!"
       redirect_to category_path(@category)
     else
-      flash[:error] = "something went wrong :("
+      flash[:error] = @category.errors.full_messages.to_sentence
       render :edit
     end
   end

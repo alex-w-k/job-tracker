@@ -10,6 +10,7 @@ describe 'User creates a new comment' do
     visit company_job_path(company, job)
     fill_in "comment[title]", with: "Comment Title!"
     fill_in "comment[body]", with: 'Comment Body'
+    click_on 'Submit'
 
     expect(current_path).to eq(company_job_path(company, job))
     expect(page).to have_content('Comment Title!')
