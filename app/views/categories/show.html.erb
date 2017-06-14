@@ -2,13 +2,14 @@
   <div class="nav-wrapper">
     <div class="col s11">
       <%= link_to 'Home', root_path, class: "breadcrumb"%>
-      <%= link_to @company.title, company_path(@company), class: "breadcrumb" %>
+      <%= link_to "Categories", categories_path, class: "breadcrumb" %>
+      <%= link_to @category.title, category_path(@category), class: "breadcrumb" %>
     </div>
   </div>
 </nav>
 <ul class="collection with-header">
-  <li class="collection-header"><h4>All Jobs for <strong><%= @company.name %></strong></h4></li>
-  <% @company.jobs.each do |job| %>
+  <li class="collection-header"><h4>All Jobs for <strong><%= @category.title %></strong></h4></li>
+  <% @category.jobs.each do |job| %>
     <li class="collection-item job_<%= job.id %>">
       <%= link_to "#{job.title} at #{job.company.name}", company_job_path(job.company, job) %><br>
       <%= link_to '<i class="material-icons">mode_edit</i>'.html_safe, edit_company_job_path(job.company, job), class: "btn-floating btn-large waves-effect waves-light red" %>
@@ -16,4 +17,3 @@
     </li>
   <% end %>
 </ul>
-<%= link_to '<i class="material-icons">add</i>'.html_safe, new_job_path, class: "btn-floating btn-large waves-effect waves-light red" %>

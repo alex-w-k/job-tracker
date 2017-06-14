@@ -38,7 +38,10 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'selenium-webdriver', '2.48.1'
+  gem "chromedriver-helper"
   gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :development do

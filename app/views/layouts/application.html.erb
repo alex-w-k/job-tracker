@@ -8,7 +8,7 @@
 </head>
 <body>
   <% flash.each do |message_type, message| %>
-    <%= javascript_tag "Materialize.toast('#{message}', 4000)" %>
+    <%= javascript_tag "Materialize.toast('#{message}', 14000, 'rounded')" %>
   <% end %>
   <%= yield %>
 </body>
