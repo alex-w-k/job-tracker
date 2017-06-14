@@ -1,0 +1,15 @@
+<% @job.display_comments.each do |comment| %>
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"><%= comment.title %></span>
+          <p><%= comment.body %></p>
+        </div>
+        <div class="card-action">
+          on: <%= comment.updated_at.strftime("%b %d, %Y at %H:%M") %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

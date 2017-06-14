@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col s6">
+    <%= form_for [@company, @job, @comment] do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+
+      <%= f.submit 'Submit', class: "btn waves-effect waves-light" %>
+    <% end %>
+  </div>
+</div>

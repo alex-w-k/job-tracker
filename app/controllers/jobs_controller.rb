@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+
   def index
     @company = Company.find(params[:company_id])
     @jobs = @company.jobs
@@ -23,12 +24,14 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    @company = Company.find(params[:company_id])
+    @comment = Comment.new
   end
 
   def edit
     @company = Company.find(params[:company_id])
-    @categories = Category.all
     @job = Job.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -52,6 +55,14 @@ class JobsController < ApplicationController
   end
 
   private
+
+  def set_company
+     @company = Company.find(params[:company_id])
+  end
+
+   def set_job
+     @job = Job.find(params[:id])
+   end
 
   def job_params
     params.require(:job).permit(:title, :description, :level_of_interest, :city, :category_id)
