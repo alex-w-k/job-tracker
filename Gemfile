@@ -42,6 +42,7 @@ group :development, :test do
   gem "chromedriver-helper"
   gem 'launchy'
   gem 'shoulda-matchers'
+  gem 'faker'
 end
 
 group :development do
