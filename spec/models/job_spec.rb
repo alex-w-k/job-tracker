@@ -36,5 +36,8 @@ describe Job do
     it 'belongs to a category' do
       expect(job).to respond_to(:category)
     end
+    it 'has may comments' do
+      expect(job).to respond_to(:comments)
+    end
   end
 end
